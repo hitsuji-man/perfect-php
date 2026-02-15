@@ -14,4 +14,18 @@ class Employee
         $this->name = $name;
         $this->type = $type;
     }
+
+    public function getName()
+    {
+        return $this->name;
+    }
+
+    public function getTypeLabel()
+    {
+        return match($this->type) {
+            self::PARTTIME => 'アルバイト',
+            self::REGULAR  => '正社員',
+            self::CONTRACT => '契約社員',
+        };
+    }
 }

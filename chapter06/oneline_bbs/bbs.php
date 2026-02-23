@@ -55,6 +55,8 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         mysqli_stmt_bind_param($stmt, "sss", $name, $comment, $created_at);
 
         mysqli_stmt_execute($stmt);
+
+        header('Location: http://' . $_SERVER['HTTP_HOST'] . $_SERVER['REQUEST_URI']);
     }
 }
 ?>

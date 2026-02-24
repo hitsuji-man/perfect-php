@@ -59,6 +59,22 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         header('Location: http://' . $_SERVER['HTTP_HOST'] . $_SERVER['REQUEST_URI']);
     }
 }
+
+// 投稿された内容を取得するSQLを作成して結果を取得
+$sql = "SELECT * FROM `post` ORDER BY `created_at` DESC";
+$result = mysqli_query($link, $sql);
+
+// 取得した結果を$postsに格納
+$posts = array();
+if ($result !== false && mysqli_num_rows($result)) {
+    while ($post = mysqli_fetch_assoc($result)){
+        $posts[] = $post;
+    }
+}
+    
+// 取得結果を解放して接続を閉じる
+mysqli_free_result($result);
+mysqli_close($link);
 ?>
 
 <!DOCTYPE html>
@@ -86,28 +102,16 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         <input type="submit" name="submit" value="送信" />
     </form>
 
-    <?php
-    // 投稿された内容を取得するSQLを作成して結果を取得
-    $sql = "SELECT * FROM `post` ORDER BY `created_at` DESC";
-    $result = mysqli_query($link, $sql);
-    ?>
-
-    <?php if ($result !== false && mysqli_num_rows($result)): ?>
+    <?php if(count($posts) > 0): ?>
     <ul>
-        <?php while ($post = mysqli_fetch_assoc($result)): ?>
+        <?php foreach ($posts as $post): ?>
         <li>
             <?php echo htmlspecialchars($post['name'], ENT_QUOTES, 'UTF-8'); ?>
             <?php echo htmlspecialchars($post['comment'], ENT_QUOTES, 'UTF-8'); ?>
-            <?php echo htmlspecialchars($post['created_at'], ENT_QUOTES, 'UTF-8'); ?>
+            - <?php echo htmlspecialchars($post['created_at'], ENT_QUOTES, 'UTF-8'); ?>
         </li>
-        <?php endwhile ?>
+        <?php endforeach; ?>
     </ul>
-    <?php endif?>
-
-    <?php
-    // 取得結果を解放して接続を閉じる
-    mysqli_free_result($result);
-    mysqli_close($link);
-    ?>
+    <?php endif; ?>
 </body>
 </html>

@@ -4,6 +4,8 @@ class DbManager
 {
     // PDOクラスのインスタンスを配列で保持する
     protected $connections = array();
+    // テーブルごとのRepositoryクラスと接続名の対応を格納
+    protected $repository_connection_map = array();
 
     public function connect($name, $params)
     {
@@ -42,5 +44,33 @@ class DbManager
         }
 
         return $this->connections[$name];
+    }
+
+    /**
+     * Repositoryと使用する接続名の対応を登録する
+     * @param mixed $repository_name
+     * @param mixed $name
+     * @return void
+     */
+    public function setReposityConnectionMap($repository_name, $name)
+    {
+        $this->repository_connection_map[$repository_name] = $name;
+    }
+
+    /**
+     * Repositoryクラスに対応するDB接続を取得する(未設定の場合はデフォルト接続) 
+     * @param mixed $repository_name
+     * @return array|PDO
+     */
+    public function getConnectionForRepository($repository_name)
+    {
+        if (isset($this->repository_connection_map[$repository_name])) {
+            $name = $this->repository_connection_map[$repository_name];
+            $con = $this->getConnection($name);
+        } else {
+            $con = $this->getConnection();
+        }
+
+        return $con;
     }
 }

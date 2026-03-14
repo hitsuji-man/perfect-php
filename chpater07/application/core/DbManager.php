@@ -6,6 +6,8 @@ class DbManager
     protected $connections = array();
     // テーブルごとのRepositoryクラスと接続名の対応を格納
     protected $repository_connection_map = array();
+    // 全てのインスタンスをDbManagerクラスで管理できるようにする。それらを保持する
+    protected $repositories = array();
 
     public function connect($name, $params)
     {
@@ -72,5 +74,37 @@ class DbManager
         }
 
         return $con;
+    }
+
+    /**
+     * インスタンスの生成
+     */
+
+    public function get($repository_name)
+    {
+        if (!isset($this->repositories[$repository_name])) {
+            $repository_class = $repository_name . 'Repository';
+            $con = $this->getConnectionForRepository($repository_name);
+
+            $repository = new $repository_class($con);
+
+            $this->repositories[$repository_name] = $repository;
+        }
+
+        return $this->repositories[$repository_name];
+    }
+
+    /**
+     * データベースとの接続の解放処理
+     */
+    public function __destruct()
+    {
+        foreach ($this->repositories as $repository) {
+            unset($repository);
+        }
+
+        foreach ($this->connections as $con) {
+            unset($con);
+        }
     }
 }

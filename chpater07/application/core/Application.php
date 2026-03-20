@@ -14,4 +14,15 @@ abstract class Application
         $this->initialize();
         $this->configure();
     }
+    protected function setDebugMode($debug)
+    {
+        if ($debug) {
+            $this->debug = true;
+            ini_set('display_errors', 1);
+            error_reporting(-1);
+        } else {
+            $this->debug = false;
+            ini_set('display_errors', 0);
+        }
+    }
 }

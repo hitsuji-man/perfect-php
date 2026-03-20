@@ -14,6 +14,7 @@ abstract class Application
         $this->initialize();
         $this->configure();
     }
+
     protected function setDebugMode($debug)
     {
         if ($debug) {
@@ -33,6 +34,10 @@ abstract class Application
         $this->session    = new Session();
         $this->db_manager = new DbManager();
         $this->router     = new Router($this->registerRoutes());
+    }
+
+    protected function configure()
+    {
     }
 
 }

@@ -25,4 +25,14 @@ abstract class Application
             ini_set('display_errors', 0);
         }
     }
+
+    protected function initialize()
+    {
+        $this->request    = new Request();
+        $this->response   = new Response();
+        $this->session    = new Session();
+        $this->db_manager = new DbManager();
+        $this->router     = new Router($this->registerRoutes());
+    }
+
 }

@@ -109,4 +109,25 @@ abstract class Application
         $this->response->send();
     }
 
+    /**
+     * 実際にアクションを実行する
+     * @param mixed $controller_name
+     * @param mixed $action
+     * @param mixed $params
+     * @return void
+     */
+    public function runAction($controller_name, $action, $params = array())
+    {
+        $controller_class = ucfirst($controller_name) . 'Controller';
+
+        $controller = $this->findController($controller_class);
+        if ($controller === false) {
+            // todo-B
+        }
+
+        $content = $controller->run($action, $params);
+
+        $this->response->setContent($content);
+    }
+
 }

@@ -89,4 +89,24 @@ abstract class Application
     {
         return $this->getRootDir() . '/web';
     }
+
+    /**
+     * Routerからコントローラーを特定しレスポンス送信を行うまでを管理
+     * @return void
+     */
+    public function run()
+    {
+        $params = $this->router->resolve($this->request->getPathInfo());
+        if ($params === false) {
+            // todo-A
+        }
+        
+        $controller = $params['controller'];
+        $action = $params['action'];
+
+        $this->runAction($controller, $action, $params);
+
+        $this->response->send();
+    }
+
 }

@@ -96,15 +96,19 @@ abstract class Application
      */
     public function run()
     {
-        $params = $this->router->resolve($this->request->getPathInfo());
-        if ($params === false) {
-            // todo-A
-        }
-        
-        $controller = $params['controller'];
-        $action = $params['action'];
+        try {
+            $params = $this->router->resolve($this->request->getPathInfo());
+            if ($params === false) {
+                throw new HttpNotFoundException('No route found for ' . $this->request->getPathInfo());
+            }
 
-        $this->runAction($controller, $action, $params);
+            $controller = $params['controller'];
+            $action = $params['action'];
+
+            $this->runAction($controller, $action, $params);
+        } catch (HttpNotFoundException $e) {
+            $this->render404Page($e);
+        }
 
         $this->response->send();
     }

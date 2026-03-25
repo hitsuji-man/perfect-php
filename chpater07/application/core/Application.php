@@ -126,7 +126,7 @@ abstract class Application
 
         $controller = $this->findController($controller_class);
         if ($controller === false) {
-            // todo-B
+            throw new HttpNotFoundException($controller_class . ' controller is not found.');
         }
 
         $content = $controller->run($action, $params);

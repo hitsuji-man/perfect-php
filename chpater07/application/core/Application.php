@@ -160,4 +160,31 @@ abstract class Application
 
         return new $controller_class($this);
     }
+
+    /**
+     * 404エラー画面を返す設定
+     *
+     * @param Exception $e
+     */
+    protected function render404Page($e)
+    {
+        $this->response->setStatusCode(404, 'Not Found');
+        $message = $this->isDebugMode() ? $e->getMessage() : 'Page not found.';
+        $message = htmlspecialchars($message, ENT_QUOTES, 'UTF-8');
+
+        $this->response->setContent(<<<EOF
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>404</title>
+</head>
+<body>
+    {$message}
+</body>
+</html>
+EOF
+        );
+    }
 }

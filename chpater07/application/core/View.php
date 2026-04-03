@@ -60,4 +60,15 @@ class View
 
         return $content;
     }
+
+    /**
+     * 指定された値をHTMLエスケープする
+     *
+     * @param string $string
+     * @return string
+     */
+    public function escape($string)
+    {
+        return htmlspecialchars($string, ENT_QUOTES, 'UTF-8');
+    }
 }

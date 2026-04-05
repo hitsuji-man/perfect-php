@@ -79,4 +79,15 @@ abstract class Controller
 
         return $view->render($path, $variables, $layout);
     }
+
+    /**
+     * 404エラー画面を出力
+     *
+     * @throws HttpNotFoundException
+     */
+    protected function forward404()
+    {
+        throw new HttpNotFoundException('Forwarded 404 page from '
+            . $this->controller_name . '/' . $this->action_name);
+    }
 }

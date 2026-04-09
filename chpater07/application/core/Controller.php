@@ -153,4 +153,21 @@ abstract class Controller
 
         return false;
     }
+
+    /**
+     * 指定されたアクションが認証済みでないとアクセスできないか判定
+     *
+     * @param string $action
+     * @return boolean
+     */
+    protected function needsAuthentication($action)
+    {
+        if ($this->auth_actions === true
+            || (is_array($this->auth_actions) && in_array($action, $this->auth_actions))
+        ) {
+            return true;
+        }
+
+        return false;
+    }
 }

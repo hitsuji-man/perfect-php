@@ -62,7 +62,7 @@ class View
     }
 
     /**
-     * 指定された値をHTMLエスケープする
+     * 指定された値をHTMLエスケープする処理
      *
      * @param string $string
      * @return string

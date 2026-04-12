@@ -155,7 +155,7 @@ abstract class Controller
     }
 
     /**
-     * 指定されたアクションが認証済みでないとアクセスできないか判定
+     * 指定されたアクションが認証済みでないとアクセスできないか判定する処理
      *
      * @param string $action
      * @return boolean

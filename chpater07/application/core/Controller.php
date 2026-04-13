@@ -133,7 +133,7 @@ abstract class Controller
     }
 
     /**
-     * CSRFトークンが妥当かチェック
+     * CSRFトークンが妥当かチェックする
      *
      * @param string $form_name
      * @param string $token

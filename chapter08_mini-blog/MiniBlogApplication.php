@@ -2,8 +2,6 @@
 
 /**
  * MiniBlogApplication.
- *
- * @author Katsuhiro Ogawa <fivestar@nequal.jp>
  */
 class MiniBlogApplication extends Application
 {

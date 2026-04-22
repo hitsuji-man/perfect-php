@@ -12,6 +12,7 @@ abstract class Application
     protected $response;
     protected $session;
     protected $db_manager;
+    protected $router;
 
     /**
      * コンストラクタ

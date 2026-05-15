@@ -3,7 +3,6 @@
 /**
  * ClassLoader.
  *
- * @author Katsuhiro Ogawa <fivestar@nequal.jp>
  */
 class ClassLoader
 {

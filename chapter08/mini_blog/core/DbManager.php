@@ -3,7 +3,6 @@
 /**
  * DbManager.
  *
- * @author Katsuhiro Ogawa <fivestar@nequal.jp>
  */
 class DbManager
 {

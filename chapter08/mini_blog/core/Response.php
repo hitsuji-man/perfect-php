@@ -3,7 +3,6 @@
 /**
  * Response.
  *
- * @author Katsuhiro Ogawa <fivestar@nequal.jp>
  */
 class Response
 {

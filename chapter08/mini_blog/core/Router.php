@@ -3,7 +3,6 @@
 /**
  * Router.
  *
- * @author Katsuhiro Ogawa <fivestar@nequal.jp>
  */
 class Router
 {

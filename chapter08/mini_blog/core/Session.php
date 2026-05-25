@@ -3,7 +3,6 @@
 /**
  * Session.
  *
- * @author Katsuhiro Ogawa <fivestar@nequal.jp>
  */
 class Session
 {

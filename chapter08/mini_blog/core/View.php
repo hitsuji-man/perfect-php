@@ -3,7 +3,6 @@
 /**
  * View.
  *
- * @author Katsuhiro Ogawa <fivestar@nequal.jp>
  */
 class View
 {

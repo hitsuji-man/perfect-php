@@ -3,7 +3,6 @@
 /**
  * StatusRepository.
  *
- * @author Katsuhiro Ogawa <fivestar@nequal.jp>
  */
 class StatusRepository extends DbRepository
 {

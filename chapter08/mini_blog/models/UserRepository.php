@@ -3,7 +3,6 @@
 /**
  * UserRepository.
  *
- * @author Katsuhiro Ogawa <fivestar@nequal.jp>
  */
 class UserRepository extends DbRepository
 {

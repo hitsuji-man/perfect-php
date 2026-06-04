@@ -2,7 +2,7 @@
 
 /**
  * UserRepository.
- *
+ * ユーザーリポジトリ層
  */
 class UserRepository extends DbRepository
 {

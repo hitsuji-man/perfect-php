@@ -2,7 +2,7 @@
 
 /**
  * StatusRepository.
- *
+ * ステータスレポジトリ層
  */
 class StatusRepository extends DbRepository
 {

@@ -1,7 +1,8 @@
 <?php
 
 /**
- * StatusRepository.
+ * FollowingRepository
+ * フォローイングレポジトリ層
  *
  */
 class FollowingRepository extends DbRepository

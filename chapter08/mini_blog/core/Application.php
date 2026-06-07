@@ -2,6 +2,7 @@
 
 /**
  * Application.
+ * コアアプリケーションクラス
  *
  */
 abstract class Application

@@ -2,6 +2,7 @@
 
 /**
  * ClassLoader.
+ * クラスローダー
  *
  */
 class ClassLoader

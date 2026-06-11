@@ -2,6 +2,7 @@
 
 /**
  * DbManager.
+ * データベースマネージャクラス
  *
  */
 class DbManager

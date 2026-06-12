@@ -2,6 +2,7 @@
 
 /**
  * DbRepository.
+ * データベースリポジトリクラス
  *
  */
 abstract class DbRepository

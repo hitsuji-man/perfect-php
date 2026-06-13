@@ -2,6 +2,7 @@
 
 /**
  * Request.
+ * リクエストクラス
  *
  */
 class Request

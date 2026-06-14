@@ -2,6 +2,7 @@
 
 /**
  * Response.
+ * レスポンスクラス
  *
  */
 class Response

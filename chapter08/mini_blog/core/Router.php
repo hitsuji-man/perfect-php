@@ -2,6 +2,7 @@
 
 /**
  * Router.
+ * ルータークラス
  *
  */
 class Router

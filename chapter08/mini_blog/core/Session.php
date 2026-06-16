@@ -2,6 +2,7 @@
 
 /**
  * Session.
+ * セッションクラス
  *
  */
 class Session

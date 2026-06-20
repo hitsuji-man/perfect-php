@@ -2,6 +2,7 @@
  
 /**
  * View.
+ * ビュークラス
  *
  */
 class View

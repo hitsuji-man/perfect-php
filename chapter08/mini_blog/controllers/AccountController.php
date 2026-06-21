@@ -2,6 +2,7 @@
 
 /**
  * AccountController.
+ * アカウントコントローラー
  *
  */
 class AccountController extends Controller

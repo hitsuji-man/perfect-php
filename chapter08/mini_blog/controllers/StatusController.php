@@ -2,6 +2,7 @@
 
 /**
  * StatusController.
+ * ステータスコントローラー
  *
  */
 class StatusController extends Controller

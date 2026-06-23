@@ -1,3 +1,4 @@
+<!-- アカウントページ -->
 <?php $this->setLayoutVar('title', 'アカウント') ?>
 
 <h2>アカウント</h2>

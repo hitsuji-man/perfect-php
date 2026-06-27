@@ -1,3 +1,4 @@
+<!-- ステータスホームページ -->
 <?php $this->setLayoutVar('title', 'ホーム') ?>
 
 <h2>ホーム</h2>

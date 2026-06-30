@@ -1,3 +1,4 @@
+<!-- ステータス(コンテント)をセット -->
 <div class="status">
     <div class="status_content">
         <a href="<?php echo $base_url; ?>/user/<?php echo $this->escape($status['user_name']); ?>">

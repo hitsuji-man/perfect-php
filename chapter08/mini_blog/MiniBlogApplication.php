@@ -2,6 +2,7 @@
 
 /**
  * MiniBlogApplication.
+ * ミニブログアプリケーションクラス
  */
 class MiniBlogApplication extends Application
 {

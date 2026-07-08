@@ -2,7 +2,7 @@
 
 /**
  * Controller.
- * コントローラークラス
+ * コントローラー抽象クラス
  *
  */
 abstract class Controller
